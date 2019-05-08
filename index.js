@@ -64,7 +64,7 @@ function SinopiaRequest( config, sinopia ) {
             else if ( !res )
                 return callback( null, false );
             else
-                return callback( null, user );
+                return callback( null, [user] );
         } );
     };
 
