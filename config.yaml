@@ -48,3 +48,4 @@ packages:
 logs:
   - {type: stdout, format: pretty, level: http}
   #- {type: file, path: sinopia.log, level: info}
+
