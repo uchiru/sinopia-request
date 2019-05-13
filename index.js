@@ -43,7 +43,7 @@ function SinopiaRequest( config, sinopia ) {
         err.status = 500;
         return callback(err);
       } else {
-        return callback(null, response);
+        return callback(null, body);
       }
     });
   };
