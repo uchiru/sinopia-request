@@ -57,6 +57,7 @@ function SinopiaRequest( config, sinopia ) {
       console.log("=====================================")
       console.log(user)
       console.log(res)
+      console.log("1")
       console.log("=====================================")
 
       if (err) {
