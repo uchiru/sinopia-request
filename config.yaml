@@ -11,11 +11,11 @@ storage: ./storage
 
 auth:
   request:
-    host: users.uchi.ru
-    port: 80
+    host: localhost
+    port: 3000
     method: POST
-    adduser_route: /api/v1/verdaccio/adduser
-    authenticate_route: /api/v1/verdaccio/authenticate
+    adduser_route: /adduser
+    authenticate_route: /authenticate
     password_encrypt: sha1
 
 # a list of other known repositories we can talk to

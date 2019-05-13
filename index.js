@@ -24,6 +24,7 @@ function SinopiaRequest( config, sinopia ) {
   }
 
   console.log('uchiru/sinopia-request plugin loaded.');
+  console.log('2');
 
   var request = function (user, password, route, callback) {
     var options = base_options;
