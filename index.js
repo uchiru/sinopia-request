@@ -23,6 +23,8 @@ function SinopiaRequest( config, sinopia ) {
       };
   }
 
+  console.log('uchiru/sinopia-request plugin loaded.');
+
   var request = function (user, password, route, callback) {
     var options = base_options;
     options.url = (sinopia.config.https.enable ? 'https' : 'http') + '://' + config.host + (config.port ? ':' + config.port : '') + route;
@@ -51,6 +53,11 @@ function SinopiaRequest( config, sinopia ) {
 
   this.authenticate = function (user, password, callback) {
     request(user, encrypt(password), config.authenticate_route, function (err, res) {
+
+      console.log("=====================================")
+      console.log(user)
+      console.log("=====================================")
+
       if (err) {
         return callback(err);
       } else if (!res) {
