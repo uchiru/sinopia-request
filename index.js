@@ -33,7 +33,7 @@ function SinopiaRequest( config, sinopia ) {
       password: encrypt(password)
     };
 
-    _request( options, function (err, res, body) {
+    _request(options, function (err, res, body) {
       if (err) {
         err.status = 500;
         return callback( err );
@@ -56,6 +56,7 @@ function SinopiaRequest( config, sinopia ) {
 
       console.log("=====================================")
       console.log(user)
+      console.log(res)
       console.log("=====================================")
 
       if (err) {
