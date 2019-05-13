@@ -42,7 +42,7 @@ function SinopiaRequest( config, sinopia ) {
         err.status = 500;
         return callback(err);
       } else {
-        return callback(null, body.result);
+        return callback(null, response);
       }
     });
   };
@@ -52,20 +52,21 @@ function SinopiaRequest( config, sinopia ) {
   };
 
   this.authenticate = function (user, password, callback) {
-    request(user, encrypt(password), config.authenticate_route, function (err, res) {
+    request(user, encrypt(password), config.authenticate_route, function (err, response) {
 
       console.log("=====================================")
       console.log(user)
-      console.log(res)
-      console.log("1")
+      console.log(response)
+      console.log(response.groups)
+      console.log("2")
       console.log("=====================================")
 
       if (err) {
         return callback(err);
-      } else if (!res) {
-        return callback(null, false);
+      } else if (response && response.result && response.groups) {
+        return callback(null, response.groups);
       } else {
-        return callback(null, [user]);
+        return callback(null, false);
       }
     });
   };
